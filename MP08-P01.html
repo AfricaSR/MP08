@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript">
+        
+        function menor(){
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var n3 = parseInt(document.getElementById("n3").value);
+            var n4 = parseInt(document.getElementById("n4").value);
+            var n5 = parseInt(document.getElementById("n5").value);
+
+            var arrayNum = new Array(5);
+            arrayNum = [n1, n2, n3, n4, n5];
+
+            var i;
+            var j;
+            var aux=0;
+
+            for (i = 0; i < 5 ; i++){
+                for (j = 1; j < 5; j++){
+                    if (arrayNum[i]>arrayNum[j]){
+                        aux = arrayNum[i];
+                        arrayNum[i]=arrayNum[j];
+                        arrayNum[j]=aux;
+                    }
+                }
+            }
+
+            alert("El más pequeño es el " + arrayNum[0]);
+
+        }
+
+    </script>
+
+    <title>Programa de prueba</title>
+</head>
+
+<body>
+    <form>
+        <p>Introduce 5 números</p>
+        <p>N#1 <input type="text" name="n1" id="n1" /></p>
+        <p>N#2 <input type="text" name="n2" id="n2" /></p>
+        <p>N#3 <input type="text" name="n3" id="n3" /></p>
+        <p>N#4 <input type="text" name="n4" id="n4" /></p>
+        <p>N#5 <input type="text" name="n5" id="n5" /></p>
+        <button onclick="menor()">Dame el Menor</button>
+    </form>
+</body>
